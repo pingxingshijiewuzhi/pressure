@@ -1,0 +1,274 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 头像样式 */
+.tx {
+	border-radius: 50%;
+}
+.content {
+	height: 100vh;
+	position: relative;
+}
+.head {
+	height: 260rpx;
+	width: 100%;
+	background-color: #3F7BE9;
+}
+.head_title {
+	width: 30%;
+	padding-top: 60rpx;
+	position: relative;
+}
+.head_img {
+	width: 24rpx;
+	height: 38rpx;
+	margin-bottom: 30rpx;
+}
+.head_left {
+	margin-left: 30rpx
+}
+.head_left image {
+	width: 120rpx;
+	height: 120rpx;
+}
+.right {
+	width: 20%;
+	letter-spacing: 4rpx;
+	margin-top: 40rpx;
+}
+.day {
+	font-size: 64rpx
+}
+.xl {
+	width: 27rpx;
+	height: 19rpx;
+	position: absolute;
+	margin-left: 600rpx;
+	margin-top: 360rpx;
+}
+.xl_copy {
+	width: 27rpx;
+	height: 19rpx;
+	position: absolute;
+	margin-left: 600rpx;
+	margin-top: 159rpx;
+}
+.title {
+	width: 35%;
+	font-size: 34rpx;
+	margin-top: 100rpx;
+}
+.right {
+	width: 20%;
+	letter-spacing: 4rpx;
+}
+.day {
+	font-size: 64rpx
+}
+.times {
+	margin: 20rpx 0;
+	font-size: 28rpx !important;
+	letter-spacing: 8rpx;
+}
+.times_img {
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 20rpx;
+}
+/* 按钮浮动 */
+.button {
+	position: absolute;
+	text-align: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	bottom: 50rpx;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+.search {
+	width: 200rpx;
+	margin: 0 10rpx;
+	background-color: #4286EC;
+	border-radius: 42rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #F2FFFF;
+}
+.uni-loadmore {
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50rpx;
+	line-height: 50rpx;
+}
+/* 控制面板样式 */
+.controlpanel {
+	width: 180rpx;
+	text-align: center;
+	font-size: 28rpx;
+	background-color: red;
+	border-radius: 42rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	color: #F2FFFF;
+	position: absolute;
+	top: 60rpx;
+	right: -180rpx;
+}
+

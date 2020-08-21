@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "helang-checkbox": "/components/helang-checkbox/helang-checkbox"
+  }
+}

@@ -1,0 +1,100 @@
+
+.content {}
+.status_bar {
+	height: var(--status-bar-height);
+	width: 100%;
+}
+page {
+	color: #333;
+}
+button {
+	margin: 10rpx;
+}
+/* 顶部样式 */
+.head {
+	height: 260rpx;
+	width: 100%;
+	background-color: #3F7BE9;
+}
+.head_title {
+	width: 30%;
+	padding-top: 60rpx;
+}
+.head_img {
+	width: 24rpx;
+	height: 38rpx;
+	margin-bottom: 30rpx;
+}
+.head_left {
+	margin-left: 30rpx
+}
+.head_left image {
+	width: 120rpx;
+	height: 120rpx;
+}
+.title {
+	width: 50%;
+	font-size: 40rpx;
+	margin-top: 12rpx;
+}
+.right {
+	width: 15%;
+	letter-spacing: 4rpx;
+	margin-top: 40rpx;
+}
+.day {
+	font-size: 64rpx
+}
+/* 图片样式 */
+.tx {
+	border-radius: 50%;
+}
+.xl {
+	width: 27rpx;
+	height: 19rpx;
+	position: absolute;
+	margin-left: 600rpx;
+	margin-top: 360rpx;
+}
+/* 顶部样式 */
+.devices_summary {
+	margin-top: 5rpx;
+	padding: 20rpx;
+	font-size: 30rpx;
+}
+.device_list {
+	margin: 5rpx 20rpx 5rpx 20rpx;
+	border: 1rpx solid #ddd;
+	border-radius: 10rpx;
+	background-color: #FdFdFd;
+	min-height: 0rpx;
+	max-height: 400rpx;
+	width: 700rpx;
+}
+.device_item {
+	border-bottom: 1rpx solid #ddd;
+	padding: 20rpx;
+	color: #666;
+}
+.device_item_hover {
+	background-color: rgba(0, 0, 0, .1);
+}
+.connected_info {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #F0F0F0;
+	padding: 10px;
+	padding-bottom: 20px;
+	margin-bottom: env(safe-area-inset-bottom);
+	font-size: 14px;
+	min-height: 100px;
+	-webkit-box-shadow: 0px 0px 3px 0px;
+	        box-shadow: 0px 0px 3px 0px;
+}
+.connected_info .operation {
+	position: absolute;
+	display: inline-block;
+	right: 30px;
+}
+

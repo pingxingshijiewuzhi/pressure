@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/personalCenter/personalCenter",
+    "pages/blueToothPrint/blueToothPrint",
+    "pages/setUserinfo/setUserinfo",
+    "pages/register/register",
+    "pages/information/information",
+    "pages/systemSettings/systemSettings",
+    "pages/subAccount/subAccount",
+    "pages/vipArea/vipArea",
+    "pages/followUs/followUs",
+    "pages/newsInformation/newsInformation",
+    "pages/newsList/newsList",
+    "pages/Instructions/Instructions",
+    "pages/queryAnalysis/queryAnalysis",
+    "pages/realtime/realtime",
+    "pages/bluetooth/bluetooth",
+    "pages/language/language",
+    "pages/pdfReport/pdfReport",
+    "pages/pdfReport/printReport",
+    "pages/alldayData/alldayData",
+    "pages/measurementTiming/measurementTiming",
+    "pages/dailyReport/dailyReport",
+    "pages/bestlinechart/bestlinechart",
+    "pages/linechart/linechart",
+    "pages/leftright/leftright",
+    "pages/overlap/overlap",
+    "pages/monthdata/monthdata",
+    "pages/monthPort/monthPort",
+    "pages/queryAnalysisdata/queryAnalysisdata"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "pressure",
+  "compilerVersion": "2.6.16",
+  "usingComponents": {}
+}

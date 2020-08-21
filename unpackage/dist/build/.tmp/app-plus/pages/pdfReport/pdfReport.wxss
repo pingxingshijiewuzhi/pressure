@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 头像样式 */
+.tx{
+	border-radius: 50%;
+}
+.content{
+	height: 100vh;
+}
+.head{
+	height:260rpx;
+	width:100%;
+	background-color: #3F7BE9;
+}
+.head_title{
+	width:30%;
+	padding-top:60rpx;
+}
+.head_img{
+	width:24rpx;
+	height:38rpx;
+	margin-bottom: 30rpx;
+}
+.head_left{
+	margin-left:30rpx
+}
+.head_left image{
+	width:120rpx;
+	height:120rpx;
+}
+.title{
+	width:35%;
+	font-size: 40rpx;
+	margin-top:60rpx;
+}
+.right{
+	width:20%;
+	letter-spacing: 4rpx;
+}
+.day{
+	font-size:64rpx
+}
+.box{
+	width:60%;
+	margin:120rpx auto;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.box_img{
+	width:150rpx;
+	height:150rpx;
+}
+.box_type{
+	margin:40rpx 0;
+	font-size:32rpx;
+}
+

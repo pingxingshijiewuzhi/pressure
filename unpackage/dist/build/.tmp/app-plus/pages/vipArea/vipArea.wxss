@@ -1,0 +1,81 @@
+
+.tx{
+		border-radius: 50%;
+}
+.content{
+		height:100vh;
+}
+.head{
+		height:260rpx;
+		width:100%;
+		background-color: #3F7BE9;
+}
+.head_title{
+		width:30%;
+		padding-top:60rpx;
+}
+.head_img{
+		width:24rpx;
+		height:38rpx;
+		margin-bottom: 30rpx;
+}
+.head_left{
+		margin-left:30rpx
+}
+.head_left image{
+		width:115rpx;
+		height:115rpx;
+}
+.title{
+		font-size: 40rpx;
+		margin-top:60rpx;
+		margin-left:80rpx
+}
+.QRcode{
+		text-align:center;
+		margin-top:80rpx;
+}
+.ewm{
+		width:309rpx;
+		height:309rpx;
+}
+.scanit{
+	    text-align:center;
+		width:321rpx;
+		margin-top:40rpx;
+		background:-webkit-gradient(linear,left top, right top,from(#E8CE98),to(#C5A370));
+		background:-webkit-linear-gradient(left,#E8CE98,#C5A370);
+		background:linear-gradient(to right,#E8CE98,#C5A370);
+	    border-radius:32rpx;
+		margin-left:218rpx;
+		height:60rpx;
+		line-height:60rpx;
+		font-weight:bold;
+}
+.grandPrix{
+		font-weight:bold;
+		margin-top:100rpx;
+		text-align:center;
+		font-size:32rpx;
+}
+.bottom{
+		margin-top:80rpx;
+}
+.bottom_list{
+		-webkit-box-pack:start;
+		-webkit-justify-content:flex-start;
+		        justify-content:flex-start;
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		margin-bottom:35rpx;
+		margin-left:20rpx;
+}
+.privilege_num{
+		color:#8C754F;
+		font-size:28rpx;
+}
+.text{
+		font-size:28rpx;
+}
+

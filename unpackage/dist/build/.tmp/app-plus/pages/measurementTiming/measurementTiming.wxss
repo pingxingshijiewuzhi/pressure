@@ -1,0 +1,254 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* 头像样式 */
+.tx{
+		border-radius: 50%;
+}
+.content{
+		height: 100vh;
+}
+.head{
+		height:260rpx;
+		width:100%;
+		background-color: #3F7BE9;
+}
+.head_title{
+		width:30%;
+		padding-top:60rpx;
+}
+.head_img{
+		width:24rpx;
+		height:38rpx;
+		margin-bottom: 30rpx;
+}
+.head_left{
+		margin-left:30rpx
+}
+.head_left image{
+		width:115rpx;
+		height:115rpx;
+}
+.title{
+		font-size: 40rpx;
+		margin-top:60rpx;
+		margin-left:80rpx
+}
+.nav{
+		margin-top:65rpx;
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		margin-left:20rpx;
+}
+.body{
+		margin-top:72rpx;
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		-webkit-flex-wrap:wrap;
+		        flex-wrap:wrap;
+		width:93%;
+}
+.body view{
+		width:160rpx;
+		height:98rpx;
+		line-height:98rpx;
+		margin-top:10rpx;
+		font-size:32rpx;
+		text-align:center;
+		background-color:#BFBFBF;
+		border-radius:20rpx;
+		margin:8rpx auto;
+}
+.activecolor{
+		background-color:#4078E9 !important;
+}
+.button{
+		text-align:center;
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		-webkit-box-pack:center;
+		-webkit-justify-content:center;
+		        justify-content:center;
+		margin-top:124rpx;
+}
+.save{
+		width:300rpx;
+		background-color: #4286EC;
+		border-radius:42rpx;
+		height:80rpx;
+		line-height:80rpx;
+		color:#F2FFFF;
+}
+

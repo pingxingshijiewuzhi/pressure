@@ -1,0 +1,193 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		}
+		,
+		{
+		   "path" : "pages/personalCenter/personalCenter",
+		    "style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		{
+		   "path" : "pages/blueToothPrint/blueToothPrint",
+		    "style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		
+		{//用户信息修改
+			"path": "pages/setUserinfo/setUserinfo",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		{
+            "path" : "pages/register/register",
+            "style" : {
+				"navigationBarTitleText": "注册",
+				"navigationBarBackgroundColor": "#4082EB",
+				"navigationBarTextStyle": "white"
+			}
+        }
+        ,{
+            "path" : "pages/information/information",
+            "style" : {
+				"navigationBarTitleText": "资料填写",
+				"navigationBarBackgroundColor": "#4082EB",
+				"navigationBarTextStyle": "white"
+			}
+        }
+       
+        ,{//系统设置
+            "path" : "pages/systemSettings/systemSettings",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{//子账号
+            "path" : "pages/subAccount/subAccount",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+		}
+        ,{//VIP专区
+            "path" : "pages/vipArea/vipArea",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+		}
+        ,{//关注我们
+            "path" : "pages/followUs/followUs",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{//新闻资讯
+            "path" : "pages/newsInformation/newsInformation",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{//新闻资讯
+            "path" : "pages/newsList/newsList",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/Instructions/Instructions",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{//日数据月数据查询
+            "path" : "pages/queryAnalysis/queryAnalysis",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        },
+		{//实时数据
+			"path": "pages/realtime/realtime",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		{//蓝牙连接
+			"path": "pages/bluetooth/bluetooth",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		{//语言切换
+			"path": "pages/language/language",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		{//pdf报告查询
+			"path": "pages/pdfReport/pdfReport",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		{//打印简易报告
+			"path": "pages/pdfReport/printReport",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		},
+		{//全天数据
+			"path": "pages/alldayData/alldayData",
+			"style" : {
+				"navigationStyle":"custom"
+			}
+		}
+        ,{//测量定时
+            "path" : "pages/measurementTiming/measurementTiming",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{//日曲线报告
+            "path" : "pages/dailyReport/dailyReport",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/bestlinechart/bestlinechart",
+            "style" : {
+        		"navigationStyle":"custom"
+        	}
+        }
+        ,{
+            "path" : "pages/linechart/linechart",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/leftright/leftright",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/overlap/overlap",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/monthdata/monthdata",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/monthPort/monthPort",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{//日数据查询结果
+            "path" : "pages/queryAnalysisdata/queryAnalysisdata",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+    ],
+
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

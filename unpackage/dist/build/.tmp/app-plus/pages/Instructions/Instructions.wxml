@@ -1,0 +1,4 @@
+<view class="content"><view class="head flexs1"><view class=" head_title text-white text-center flexs"><image class="head_img" src="../../static/image/tab_icon_back_ty@2x.png" data-event-opts="{{[['tap',[['back',['$event']]]]]}}" bindtap="__e"></image><view class="head_left"><image class="tx" src="{{baseUrl+avatar}}"></image><view class="name">{{username}}</view></view></view><view class="title text-white ">{{langtype=='CH'?langch.shiyong:langen.shiyong}}</view></view><view class="header">标题</view><view class="top"><image class="pic" src="../../static/image/img_tp_30xwzx@2x.png"></image><view class="artical">在今天的室内装饰中，健康问题越来越受到消费者的关注。很多人已经了解了室内污染的危害，也希望改善生活环境，但往往他们付出了很多努力但却达
+			不到预期的效果。这主要是由于对治理方法缺乏了解。	1.民间法.目前，有许多类型的土方受人们欢迎。有几种方法和几种类型，如茶，盐，醋，菠萝
+			和其他可用于控制污染的材料。但在客观分析中，这些方法与早期的流行巫医相似。跳起来跳舞并阅读诅咒可以“治愈所有疾病”。偶尔，它可以治愈几个，
+			但我担心更多的是只有心理作用。</view><image class="pic" src="../../static/image/img_tp_30xwzx@2x.png"></image></view></view>

@@ -1,0 +1,41 @@
+
+.mobile{
+	margin-top:54rpx;
+	margin-left:50rpx;
+	width:80%;
+}
+.codelist{
+	margin-top:64rpx;
+	margin-left:50rpx;
+	width:80%;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-box-pack:justify;
+	-webkit-justify-content:space-between;
+	        justify-content:space-between;
+	line-height:44rpx;
+}
+.getcode{
+	font-size:24rpx;
+	color:#202020;
+}
+.bottom{
+	text-align:center;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	        justify-content:center;
+	margin-top:124rpx;
+}
+.gonext{
+	width:525rpx;
+	background-color: #4286EC;
+	border-radius:42rpx;
+	height:98rpx;
+	line-height:98rpx;
+	color:#F2FFFF;
+}
+

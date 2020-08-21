@@ -1,0 +1,653 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 头像样式 */
+.tx {
+	border-radius: 50%;
+}
+.content {
+	height: 100vh;
+	position: relative;
+}
+.head {
+	height: 260rpx;
+	width: 100%;
+	background-color: #3F7BE9;
+}
+.head_title {
+	width: 30%;
+	padding-top: 40rpx;
+}
+.head_img {
+	width: 24rpx;
+	height: 38rpx;
+	margin-bottom: 30rpx;
+}
+.head_left {
+	margin-left: 30rpx
+}
+.head_left image {
+	width: 120rpx;
+	height: 120rpx;
+}
+.title {
+	width: 35%;
+	font-size: 40rpx;
+	margin-top: 100rpx;
+}
+.right {
+	width: 20%;
+	letter-spacing: 4rpx;
+	margin-top: 40rpx;
+}
+.day {
+	font-size: 64rpx
+}
+.times {
+	margin: 20rpx 0;
+	font-size: 28rpx !important;
+	letter-spacing: 8rpx;
+}
+.times_img {
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 20rpx;
+}
+.real {
+	margin: 120rpx 0;
+}
+.xieti {
+	width: 90%;
+	margin: 0 auto;
+	font-size: 46rpx;
+	text-align: center;
+	letter-spacing: 4rpx;
+}
+.big_box {
+	width: 410rpx;
+	height: 360rpx;
+	border-radius: 60rpx;
+	font-size: 190rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.real_one view {
+	margin: 10rpx auto;
+}
+.hg {
+	font-size: 38rpx
+}
+.big_right {
+	width: 46rpx;
+	height: 46rpx;
+	line-height: 46rpx;
+	font-size: 40rpx;
+	text-align: right;
+}
+.big_left {
+	width: 46rpx;
+	height: 46rpx;
+	line-height: 46rpx;
+	font-size: 40rpx;
+}
+/* .bottom{
+	margin-top:150rpx;
+} */
+.submit {
+	width: 300rpx;
+	background-color: #BFBFBF;
+	border-radius: 42rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	color: #F2FFFF;
+}
+/* 动态添加背景颜色高亮 */
+.addbackcolor {
+	color: #FFFFFF !important;
+	background-color: #0081FF !important;
+}
+.mask {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 998;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.bloothbox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	border: 1rpx solid #EEEEEE;
+	background-color: #FFFFFF;
+	width: 540rpx;
+	height: 490rpx;
+	z-index: 999;
+	overflow-y: scroll;
+}
+.box {
+	width: 540rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	text-align: center;
+	background-color: #F5F5F5;
+	border-radius: 10rpx;
+	margin: 40rpx 0;
+	letter-spacing: 4rpx;
+}
+

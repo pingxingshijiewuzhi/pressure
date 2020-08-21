@@ -1,0 +1,354 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* 头像样式 */
+.tx{
+		border-radius: 50%;
+}
+.content{
+		height: 100vh;
+		position: relative;
+}
+.head{
+		height:260rpx;
+		width:100%;
+		background-color: #3F7BE9;
+}
+.head_title{
+		width:30%;
+		padding-top:60rpx;
+		position: relative;
+}
+.head_img{
+		width:24rpx;
+		height:38rpx;
+		margin-bottom: 30rpx;
+}
+.head_left{
+		margin-left:30rpx
+}
+.head_left image{
+		width:120rpx;
+		height:120rpx;
+}
+.title{
+		width:40%;
+		padding-right: 10%;
+		font-size: 34rpx;
+		margin-top:100rpx;
+		color: #FFFFFF;
+}
+.title view{
+		text-align: center;
+}
+.right{
+		width:20%;
+		letter-spacing: 4rpx;
+		margin-top:40rpx;
+}
+.day{
+		font-size:64rpx
+}
+.datacontent{
+		height:calc(100vh - 260rpx);
+		width:100%;
+		padding:0 10rpx;
+		/* border:1rpx solid red; */
+}
+.datacontentheader{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		height:75rpx;
+}
+.titlemark{
+		position: relative;
+		width:100rpx;
+		height:75rpx;
+}
+.titlemark::before{
+		-webkit-transform-origin:left top;
+		        transform-origin:left top;
+		display: block;
+		content:'';
+		width:120rpx;
+		height:4rpx;
+		background: #b4f3e2;
+		-webkit-transform: rotate(36deg);
+		        transform: rotate(36deg);
+}
+.mytime{
+		position: absolute;
+		top:0;
+		right:0;
+}
+.mydata{
+		position: absolute;
+		bottom:0;
+		left:0;
+}
+.my_l{
+		background-color: #FFFFFF;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		        flex-grow: 1;
+		text-align: center;
+		line-height: 75rpx;
+		height:75rpx;
+}
+.my_r{
+		height:75rpx;
+		background-color: #EEEEEE;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		        flex-grow: 1;
+		text-align: center;
+		line-height: 75rpx;
+}
+	/* 为头部第二行单独添加背景和字体颜色 */
+.titledemocolor{
+		width:100rpx;
+		height:100%;
+		background-color: #4180EA;
+}
+.addbackcolor{
+		color:#FFFFFF;
+		background-color: #4180EA;
+}
+.my_ldemo .noborder{
+		border:1rpx solid #4180EA;
+}
+.my_rdemo .noborder{
+		border:1rpx solid #4180EA;
+}
+.my_rdemo .addcolor{
+		color:#FFFFFF;
+		background-color: #4180EA;
+}
+	/* 通用渲染数据 */
+.datacontentdemo{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		height:60rpx;
+}
+.titledemo{
+		width:100rpx;
+		height:60rpx;
+		line-height: 60rpx;
+		text-align: center;
+		background-color: #EEEEEE;
+}
+.my_ldemo{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		width:50%;
+}
+.my_rdemo{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		width:50%;
+}
+.my_ldemo view{
+		/* flex-grow: 1; */
+		/* 不能让他们自由伸展,内个view内容大小不一 */
+		/* 也不能给固定宽,那样flex失去意义,给百分比 */
+		width:50%;
+		text-align: center;
+		line-height: 60rpx;
+		height:60rpx;
+		border:1rpx solid #BFBFBF;
+}
+.my_rdemo view{
+		/* flex-grow: 1; */
+		width:50%;
+		border:1rpx solid #EEEEEE;
+		background-color: #EEEEEE;
+		text-align: center;
+		line-height: 60rpx;
+		height:60rpx;
+}
+.addblue{
+		color:blue;
+}
+.controlpanel{
+		width:180rpx;
+		text-align: center;
+		font-size: 28rpx;
+		background-color: red;
+		border-radius:42rpx;
+		height:60rpx;
+		line-height:60rpx;
+		color:#F2FFFF;
+		position: absolute;
+		top:60rpx;
+		right:-180rpx;
+}
+

@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 模态框样式*/
+.masking.data-v-3a214046{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			background-color:rgba(0,0,0,.3);
+			z-index: 999;
+}
+.deletehintimg.data-v-3a214046{
+	position:absolute;
+	right: -25rpx;
+	top: -25rpx;
+	height:50rpx;
+	width:50rpx;
+}
+.deletehint.data-v-3a214046{
+	position: fixed;
+	background: #FFFFFF;
+	border-radius: 20rpx;
+	height:450rpx;
+	width:600rpx;
+	top:40%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+	z-index: 999;
+}
+.deletehint-item>view.data-v-3a214046{
+	width:400rpx;
+	height:100rpx;
+	margin:auto;
+}
+.felx.data-v-3a214046{
+display:-webkit-box;
+display:-webkit-flex;
+display:flex;
+}
+.hint.data-v-3a214046{
+	width: 200rpx;
+	height: 32rpx;
+	line-height: 37rpx;
+	letter-spacing: 0rpx;
+	color: #151515;
+	font-size: 34rpx;
+	text-align: center;
+}
+.hintenture.data-v-3a214046{
+	letter-spacing: 1rpx;
+	color: #848484;
+}
+.deletehint-item .lastview.data-v-3a214046{
+	margin-top: 30rpx;
+	width:500rpx;
+}
+.lastview .cancle.data-v-3a214046,.lastview .entrue.data-v-3a214046{
+	border-radius: 50rpx;
+	width:200rpx;
+	hieght:80rpx;
+	line-height: 80rpx;
+}
+.cancle.data-v-3a214046{
+	color:#2D2D2E;
+	background-color: #E7E9EE;
+}
+.entrue.data-v-3a214046{
+	color:#FFFFFF;
+	background-color:#275BE5;
+}
+

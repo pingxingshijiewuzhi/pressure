@@ -1,0 +1,54 @@
+
+.tx{
+		border-radius: 50%;
+}
+.content{
+		height:100vh;
+}
+.head{
+		height:260rpx;
+		width:100%;
+		background-color: #3F7BE9;
+}
+.head_title{
+		width:30%;
+		padding-top:60rpx;
+}
+.head_img{
+		width:24rpx;
+		height:38rpx;
+		margin-bottom: 30rpx;
+}
+.head_left{
+		margin-left:30rpx
+}
+.head_left image{
+		width:115rpx;
+		height:115rpx;
+}
+.title{
+		font-size: 40rpx;
+		margin-top:60rpx;
+		margin-left:80rpx
+}
+.body{
+		background-image:url(/static/image/img_bj_29gzwm@2x.png);
+		width:750rpx;
+		height:1125rpx;
+		background-repeat:no-repeat;
+		background-size: cover;
+}
+.code{
+		width:148rpx;
+		height:148rpx;
+		margin-top:492rpx;
+		margin-left:295rpx;
+}
+.text{
+		margin-top:65rpx;
+        width:228rpx;
+		margin-left:258rpx;
+		text-align:center;
+		color:#EDFCF4;
+}
+

@@ -1,0 +1,466 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 头像样式 */
+.tx {
+	border-radius: 50%;
+}
+.content {
+	height: 100vh;
+	position: relative;
+}
+.head {
+	height: 260rpx;
+	width: 100%;
+	background-color: #3F7BE9;
+}
+.head_title {
+	width: 30%;
+	padding-top: 60rpx;
+	position: relative;
+}
+.head_img {
+	width: 24rpx;
+	height: 38rpx;
+	margin-bottom: 30rpx;
+}
+.head_left {
+	margin-left: 30rpx
+}
+.head_left image {
+	width: 120rpx;
+	height: 120rpx;
+}
+.title {
+	width: 50%;
+	font-size: 40rpx;
+	margin-top: 100rpx;
+}
+.right {
+	width: 20%;
+	letter-spacing: 4rpx;
+	margin-top: 40rpx;
+}
+.day {
+	font-size: 64rpx
+}
+.xl {
+	width: 27rpx;
+	height: 19rpx;
+	position: absolute;
+	margin-left: 600rpx;
+	margin-top: 360rpx;
+}
+.xl_copy {
+	width: 27rpx;
+	height: 19rpx;
+	position: absolute;
+	margin-left: 600rpx;
+	margin-top: 159rpx;
+}
+.datacontent {
+	/* 减去头部,浮动和浮动本身高度 */
+	/* height:calc(100vh - 380rpx) ; */
+	height: calc(100vh - 260rpx);
+	position: relative;
+}
+/* 折线图样式 */
+.linechartcontent {
+	/* height:calc(100vh - 480rpx); */
+	height: calc(100vh - 380rpx);
+	width: 100%;
+}
+.echarts {
+	width: 100%;
+	/* height:85%; */
+	height: 100%;
+	/* border:1rpx solid red; */
+}
+/* 尾部样式 */
+.echartnumber {
+	height: 100rpx;
+	/* border: 1rpx solid red; */
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.leftbox,
+.rightbox {
+	height: 100%;
+	width: 10%;
+	border: 1rpx solid #A0A0A0;
+}
+.leftbox view,
+.rightbox view {
+	height: 50%;
+}
+.centerbox {
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	        flex-grow: 1;
+	border: 1rpx solid #A0A0A0;
+}
+.Lnumber {
+	width: 100%;
+	height: 50%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.Lnumber_item,
+.Rnumber_item {
+	width: 25%;
+	height: 100%;
+}
+.Rnumber {
+	width: 100%;
+	height: 50%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.controlpanel {
+	width: 180rpx;
+	text-align: center;
+	font-size: 28rpx;
+	background-color: red;
+	border-radius: 42rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	color: #F2FFFF;
+	position: absolute;
+	top: 60rpx;
+	right: -180rpx;
+}
+
