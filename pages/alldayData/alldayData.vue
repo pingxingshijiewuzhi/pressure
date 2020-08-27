@@ -462,6 +462,9 @@
 						success(res) {
 							console.log(res, '断开打印机蓝牙链接success')
 							// 断开success告诉页面是否自动连接录入设备蓝牙，传个状态
+							
+							// 还要传一个到本地,阻止每次返回realtime页面onshow都会自动执行监听,而是自动一步步连接自动开启监听
+							uni.setStorageSync('autorealtime',false)
 							uni.navigateTo({
 								url:'../realtime/realtime?contentrntering=1'
 							})

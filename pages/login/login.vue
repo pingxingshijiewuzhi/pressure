@@ -65,7 +65,8 @@
 						uni.setStorageSync('uid', data.user_id);
 						uni.setStorageSync('token', data.token);
 						uni.setStorageSync('userinfo', data);
-						// uni.setStorageSync('oneequeue', true);
+						// 已登录就允许执行实时监听
+						uni.setStorageSync('autorealtime', true);
 						
 						// 不跳转控制面板，修改跳转实时测试
 						uni.navigateTo({

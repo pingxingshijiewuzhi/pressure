@@ -4,8 +4,13 @@
 		<view class='mask' @click='canclemodify' v-if='boothStatus'></view>
 		<view v-if='boothStatus' class='bloothbox'>
 			<block v-for="(item,index) in bluetooth" v-if="item.name.length" :key='index'>
-				<view class="box flexs" :class="isLink[index]==2?'cur':''" @click="createBLEConnection(item.deviceId,index)">{{item.name}}
-					{{isLink[index]==1?'连接中':''}}</view>
+				<view class="box flexs"  @click="createBLEConnection(item.deviceId,index)">{{item.name}}
+				</view>
+					<radio-group v-if="deviceId===item.deviceId">
+						<view v-for="(service,service_index) in serverList" :key="service_index" style="font-size: 20rpx">
+							<radio style="transform:scale(0.7)" :value="service.uuid" @tap="select_service(service)" />{{service.uuid }}
+						</view>
+					</radio-group>
 			</block>
 		</view>
 
@@ -128,8 +133,8 @@
 				</view>
 				<view v-if='Object.getOwnPropertyNames(list).length != 4' class="flexs">
 					<view class="text-bold big_left"> </view>
-					<view class="big_box text-green border-green flexs">
-						<view class="hg flexs text-bold"></view>
+					<view class="big_box text-green border-green flexs"  :class="{'redcolor':alrealy}">
+						{{alrealy?'连接中':'00'}}
 					</view>
 					<view class="text-bold big_right"></view>
 				</view>
@@ -152,6 +157,9 @@
 			return {
 				// 当前只允许开启一次监听
 				startStatus: true,
+				
+				// 是否点击蓝牙
+				btnboothstatus:false,
 
 				// 蓝牙连接弹框
 				boothStatus: false,
@@ -201,12 +209,14 @@
 				bluetooth: [],
 				isLink: [],
 				// 调试数据
-				serverList: [],
+				serverList: [],//服务列表
 				characteristics: [],
 				readCode: '',
 				readCodeMsg: '',
-				// 用于区分设备的 id
-				serviceId: '',
+				
+				deviceId:'',// 用于区分设备的 id
+				
+				serviceId: '',// 设备服务id
 				characteristicId: '',
 				value: '0102',
 				returnMessage: '',
@@ -215,19 +225,25 @@
 				connectbloothindex: '',
 				
 				
-				alrealy:false,//默认没有断开打印设备蓝牙
+				alrealy:false,//默认没有断开打印设备蓝牙和是否开启自动连接
 			}
 		},
 		onLoad(option) {
 			// 如果是实时测量返回页面自动开启连接
 			if(option.contentrntering == 1){
 				this.alrealy = true
+				// 开启自动连接
+				this.autoconcat()
 			}
 		},
 		onShow() {
 			this.langtype = uni.getStorageSync('lang') ? uni.getStorageSync('lang') : 'CH'
 			this.getTime();
+			// 开启自动连接不用执行，自动连接结束放开
+			if(uni.getStorageSync('autorealtime')){
 			this.notifyBLECharacteristicValueChange(uni.getStorageSync('pressuredeviceId'), uni.getStorageSync('pressureserviceId'), uni.getStorageSync('characteristicId'))
+				
+			}
 		},
 		onUnload() {
 			 if(this.timer) {  
@@ -248,27 +264,52 @@
 			// uni.getStorageSync('isLink')
 		},
 		methods: {
-			gobluetooth() {
-				// 判断是不是第一次连接
-				if(!this.alrealy){
-					if(uni.getStorageSync("deviceId")){
-						let deviceId = uni.getStorageSync("deviceId");
-						uni.closeBLEConnection({
-							deviceId,
-							success(res) {
-								console.log(res, '断开蓝牙链接')
-							},
-							fail(res) {
-								console.log(res)
-							}
-						})
-					}
-				}
-				
-				this.boothStatus = true
+			// 自动连接
+			autoconcat(){
+				// 打开蓝牙
 				uni.openBluetoothAdapter({
 					success: (e) => {
-						console.log('初始化蓝牙成功:' + e.errMsg);
+						
+						let serviceId =  uni.getStorageSync('pressureserviceId');
+						let deviceId =  uni.getStorageSync('pressuredeviceId');
+						let index = uni.getStorageSync('connectbloothindex');
+						this.isLink = uni.getStorageSync('isLink')
+						this.isLink[index] = 0 //把原来数组中index改为0，防止不让再次连接
+						// 通过保存已有设备id和服务id连接
+						this.createBLEConnection(deviceId,index)
+						// 获取设备服务在连接结束自动调用
+						// this.getBLEDeviceServices(deviceId,index)
+						// 连接服务id成功自动获取特征值
+						// this.getBLEDeviceCharacteristics()
+					},
+				});
+				
+			},
+			// 断开打印设备连接
+			breakprintconcat(){
+				if(uni.getStorageSync("deviceId")){
+					let deviceId = uni.getStorageSync("deviceId");
+					uni.closeBLEConnection({
+						deviceId,
+						success(res) {
+							console.log(res, '断开蓝牙链接')
+						},
+						fail(res) {
+							console.log(res)
+						}
+					})
+				}
+			},
+			// 连接蓝牙
+			gobluetooth() {
+				this.btnboothstatus = true
+				// 判断是否存在打印设备连接并断开
+				this.breakprintconcat()
+				// 打开蓝牙弹框
+				this.boothStatus = true
+				//打开蓝牙搜索
+				uni.openBluetoothAdapter({
+					success: (e) => {
 						// 初始化完毕开始搜索
 						this.startBluetoothDeviceDiscovery()
 					},
@@ -277,9 +318,11 @@
 			startBluetoothDeviceDiscovery() {
 				//在页面显示的时候判断是都已经初始化完成蓝牙适配器若成功，则开始查找设备
 				uni.startBluetoothDevicesDiscovery({
-					// services: ['0000FFE0'],
+					services: ['0000FFE0'],
+					//建议主要通过该参数过滤掉周边不需要处理的其他蓝牙设备
+					// https://www.jianshu.com/p/73319340866e
 					success: res => {
-						console.log(res)
+						console.log('开始查找设备')
 						this.onBluetoothDeviceFound();
 					},
 					fail: res => {
@@ -310,7 +353,6 @@
 			onBluetoothDeviceFound() {
 				uni.onBluetoothDeviceFound(devices => {
 					console.log('开始监听寻找到新设备的事件');
-					console.log(devices)
 					this.getBluetoothDevices();
 				});
 			},
@@ -318,7 +360,6 @@
 			 * 获取在蓝牙模块生效期间所有已发现的蓝牙设备。包括已经和本机处于连接状态的设备。
 			 */
 			getBluetoothDevices() {
-				console.log("获取蓝牙设备");
 				uni.getBluetoothDevices({
 					success: res => {
 						console.log('获取蓝牙设备成功:' + JSON.stringify(res.devices));
@@ -330,26 +371,35 @@
 					}
 				});
 			},
-			//断开蓝牙连接
-			closeBLEConnection(deviceId, index) {
-				uni.closeBLEConnection({
-					deviceId: deviceId,
-					success: res => {
-						this.isLink.splice(index, 1, 4)
-						console.log(res)
-					}
-				})
-			},
+			//断开蓝牙连接(完全用不到)
+			// closeBLEConnection(deviceId, index) {
+			// 	uni.closeBLEConnection({
+			// 		deviceId: deviceId,
+			// 		success: res => {
+			// 			this.isLink.splice(index, 1, 4)
+			// 			console.log(res)
+			// 		}
+			// 	})
+			// },
 
 			// 连接蓝牙设备
 			createBLEConnection(deviceId, index) {
 				this.boothStatus = false
 				this.connectbloothindex = index
+				
+				// 自动连接不需要,只有第一次连接需要
+				if(!this.alrealy){
 				uni.setStorageSync('connectbloothindex', index);
+				}
 				// 保存获取的设备id
 				this.deviceId = deviceId;
-				// uni.setStorageSync('pressuredeviceId', this.deviceId);
-				if (this.isLink[index] == 2) {
+				console.log(deviceId,'连接的设备id')
+				// 保存设备id
+				if(!this.alrealy){
+				uni.setStorageSync('pressuredeviceId', this.deviceId);
+				}
+				
+				if (this.isLink[index] == 2) {//这里可能是已经连接不能重复连接
 					return;
 				}
 				this.isLink.splice(index, 1, 1)
@@ -357,8 +407,12 @@
 					deviceId: this.deviceId,
 					success: res => {
 						console.log('连接蓝牙成功')
-						this.isLink.splice(index, 1, 2);;
-						this.stopBluetoothDevicesDiscovery();
+						this.isLink.splice(index, 1, 2);//这里可能是为了上面已经连接不能重复连接条件确立
+						
+						// 如果是自动连接就不需要关闭
+						if(!this.alrealy){
+							this.stopBluetoothDevicesDiscovery();
+						}
 						this.getBLEDeviceServices(this.deviceId, index);
 					},
 					fail: res => {
@@ -369,18 +423,29 @@
 			},
 			//获取蓝牙设备所有服务(service)。
 			getBLEDeviceServices(deviceId, index) {
+				console.log(deviceId,654321)
+				var that = this
 				setTimeout(() => {
 					uni.getBLEDeviceServices({
 						// 这里的 deviceId 需要已经通过 createBLEConnection 与对应设备建立链接
 						deviceId: deviceId,
 						success: (res) => {
-							this.serverList = res.services
+							console.log(res)
+							for (let service of res.services) {
+								if (service.isPrimary) {
+									that.serverList.push(service);
+								}
+							}
+							console.log(that.serverList,'录入设备服务id')
 							res.services.forEach((item) => {
 								if (item.uuid.indexOf("FFE0") != -1) {
 									this.serviceId = item.uuid;
-									// uni.setStorageSync('pressureserviceId', item.uuid);
+									// 保存服务id
+									if(!this.alrealy){
+									uni.setStorageSync('pressureserviceId', item.uuid);
+									}
 									console.log('获取的服务idserverId:', this.serviceId)
-									this.getBLEDeviceCharacteristics(this.deviceId)
+									this.getBLEDeviceCharacteristics()
 								}
 							})
 						}
@@ -389,23 +454,27 @@
 
 			},
 			// 获取蓝牙特征值
-			getBLEDeviceCharacteristics(deviceId) {
-				uni.setStorageSync('pressuredeviceId', deviceId);
-				uni.setStorageSync('pressureserviceId', this.serviceId);
+			getBLEDeviceCharacteristics() {
+				// uni.setStorageSync('pressuredeviceId', deviceId);
+				// uni.setStorageSync('pressureserviceId', this.serviceId);
 
 				console.log("进入特征");
+				let serviceId =  uni.getStorageSync('pressureserviceId');
+				let deviceId =  uni.getStorageSync('pressuredeviceId');
 				setTimeout(() => {
 					uni.getBLEDeviceCharacteristics({
 						// 这里的 deviceId 需要已经通过 createBLEConnection 与对应设备建立链接
 						deviceId: deviceId,
 						// 这里的 serviceId 需要在 getBLEDeviceServices 接口中获取
-						serviceId: this.serviceId,
+						serviceId:serviceId,
 						success: (res) => {
 							this.characteristics = res.characteristics
 							res.characteristics.forEach((item) => {
 								if (item.uuid.indexOf("FFE1") != -1) {
 									this.characteristicId = item.uuid;
-									uni.setStorageSync('characteristicId', this.characteristicId);
+									if(!this.alrealy){
+										uni.setStorageSync('characteristicId', this.characteristicId);
+									}
 									console.log('特征值idcharacteristicId:', this.characteristicId)
 									this.notifyBLECharacteristicValueChange(this.deviceId, this.serviceId, this.characteristicId)
 								}
@@ -419,6 +488,11 @@
 			},
 			notifyBLECharacteristicValueChange(deviceId, serviceId, characteristicId) {
 				// this.stopBluetoothDevicesDiscovery();
+				
+				// 自动连接监听结束放开，开启每次进入当前页面自动监听
+				if(this.alrealy){
+					uni.setStorageSync('autorealtime', true);
+				}
 				console.log(characteristicId, '有特征值？')
 				uni.notifyBLECharacteristicValueChange({
 					state: true, // 启用 notify 功能
@@ -452,6 +526,11 @@
 			},
 			// 监听低功耗蓝牙设备的特征值变化
 			onBLECharacteristicValueChange(deviceId) {
+				
+				// 开启自动连接执行到监听特征值变化：即改变自动连接状态
+				if(this.alrealy){
+					this.alrealy = false
+				}
 				
 				var that = this
 				this.startStatus = false
@@ -688,5 +767,10 @@
 		border-radius: 10rpx;
 		margin: 40rpx 0;
 		letter-spacing: 4rpx;
+	}
+	
+	/* 蓝牙连接状态 */
+	.redcolor{
+		color:red!important;
 	}
 </style>
